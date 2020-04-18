@@ -52,7 +52,8 @@ export default class CountryItem extends Component {
                         }}
                      />
                      {/* <SvgUri
-                        style = {styles.imageStyle}
+                        width = {100}
+                        height ={100}
                         source={{
                             uri: this.countryInfo.flag,
                         }}
