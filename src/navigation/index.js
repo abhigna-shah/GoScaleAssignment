@@ -1,7 +1,7 @@
 /**
  * GoScale Assignment
  * Filename: navigation index.js
- * created on 11th April 2020
+ * created on 17th April 2020
  */
 
  /**
@@ -21,6 +21,7 @@ import { createStackNavigator } from '@react-navigation/stack';
  * Importing pages/screens 
  */
 import Home from '../pages/Home';
+import CountryInfo from '../pages/CountryInfo';
 
 const HomeStack = createStackNavigator();  
 
@@ -30,7 +31,8 @@ export default class MainRoute extends Component {
       return (
         <SafeAreaView style={{ flex: 1 }} forceInset={{ bottom: 'never' }}>
         <HomeStack.Navigator initialRouteName="Home">
-            <HomeStack.Screen name="Home" component={Home} />
+            <HomeStack.Screen name="Home" component={Home} options={{title: 'Enter Country'}} />
+            <HomeStack.Screen name="CountryInfo" component={CountryInfo} options={{title: 'Country Information'}} />
         </HomeStack.Navigator>
         </SafeAreaView>
       );
