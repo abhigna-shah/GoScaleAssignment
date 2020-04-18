@@ -14,6 +14,7 @@ import {View, Text, StyleSheet, Dimensions, Image} from "react-native";
  * Third party imports
  */
 import FastImage from 'react-native-fast-image';
+import SvgUri from 'react-native-svg-uri';
 
 export const windowWidth = Dimensions.get('window').width;
 
@@ -50,6 +51,12 @@ export default class CountryItem extends Component {
                             uri: this.countryInfo.flag,
                         }}
                      />
+                     {/* <SvgUri
+                        style = {styles.imageStyle}
+                        source={{
+                            uri: this.countryInfo.flag,
+                        }}
+                     /> */}
                      <View style={styles.textContinerViewStyle}>
                         <Text>{countryName}</Text>
                         <Text>{capital}</Text>
@@ -64,6 +71,9 @@ export default class CountryItem extends Component {
                         }}
                         resizeMode= {FastImage.resizeMode.contain}
                     />     */}
+                </View>
+                <View style={styles.weatherViewStyle}>
+                    <Text>Captital Weather</Text>
                 </View>
             </View>  
         );
@@ -93,5 +103,13 @@ const styles = StyleSheet.create({
     textContinerViewStyle: {
         flexDirection: "column",
         marginLeft: 10,
+    },
+    weatherViewStyle: {
+        justifyContent: "center",
+        alignItems: "center",
+        height: 50,
+        borderColor:"black",
+        borderWidth: 0.5,
+        margin: 5,
     }
 });
